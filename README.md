@@ -1,5 +1,7 @@
 # reverb-mvp
 
+This project regards the first created version of the Reverb MVP.
+
 ## Available Scripts
 
 In the project directory, you can run:
