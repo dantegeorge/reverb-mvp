@@ -38,9 +38,9 @@ const Rights = () => {
           <div>Alternative Title:</div>
           <input className="rights-input" type="text"/>
           <div>ISRC:</div>
-          <input className="rights-input" type="text"/>
-          <div>Edited:</div>
           <input className="rights-input" type="text" placeholder="US-TEY-09-00057"/>
+          <div>Edited:</div>
+          <input className="rights-input" type="text"/>
           <div>Album:</div>
           <input className="rights-input" type="text"/>
           <div>Label(s):</div>
@@ -56,6 +56,9 @@ const Rights = () => {
           <div>Territory:</div>
           <input className="rights-input" type="text"/>
         </div>
+        <button onClick={null} className="card">
+          Submit
+        </button>
       </div>
     </div>
   );

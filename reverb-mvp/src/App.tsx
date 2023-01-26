@@ -11,11 +11,10 @@ import RPC from "./web3RPC";
 import "./App.css";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages";
 import Buttons from "./pages/buttons";
 import Rights from "./pages/rights";
 import MusicControls from "./components/MusicControls";
-import Explore from "./pages/explore";
-
 
 const clientId = "BMTellqh0ado6Yv2f9RMk9dbPzNxzPXElOyV8mkwT4VOwzj"; // get from https://dashboard.web3auth.io
 
@@ -24,11 +23,6 @@ function App() {
   const [provider, setProvider] = useState<SafeEventEmitterProvider | null>(
     null
   );
-
-  //for music controls
-  const [currentSongIndex, setCurrentSongIndex] = useState(0);
-  const [songData, setSongs] = useState([]);
-  const [songHashes, setHashes] = useState([]);
 
   useEffect(() => {
     const init = async () => {
@@ -208,13 +202,18 @@ function App() {
     console.log(privateKey);
   };
 
+  const audioRef = useRef<HTMLAudioElement>(null);
+
+  const show = async () => {
+    console.log(audioRef);
+  };
   const loggedInView = (
     <>
       <Router>
-        <MusicControls />
+        <MusicControls/>
         <Navbar logout={logout} />
         <Routes>
-          <Route path="/" element={<Explore />} />
+          <Route path="/" element={<Home />} />
           <Route
             path="/buttons"
             element={
